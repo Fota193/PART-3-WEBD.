@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La'maison Reve - Contact</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111; 
+      color: #f5f5f5; 
+    }
+
+    #welcome-banner {
+      background-color: #d4af37;
+      color: #000;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background: #000;
+      border-bottom: 2px solid #d4af37; 
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37;
+      text-shadow: 0 0 5px #d4af37;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+    }
+
+    main h2, main h3 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    main h2 {
+      font-size: 2em;
+    }
+
+    main h3 {
+      font-size: 1.5em;
+      margin-top: 40px;
+    }
+
+    main p {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    main ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    main ul li {
+      background: #222;
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 5px solid #d4af37;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    main ul li:hover {
+      transform: scale(1.02);
+      background: #333;
+    }
+
+    .highlighted {
+      box-shadow: 0 0 15px 3px #d4af37 !important;
+      background-color: #3b3319 !important;
+    }
+
+    main ul li a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+    
+    main ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Embedded Form Container */
+    .form-embed-container {
+      margin-top: 30px;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(212,175,55,0.2);
+      background-color: #fff;
+    }
+
+    .form-embed-container iframe {
+      width: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Form Styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #d4af37;
+      font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d4af37;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1em;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+    }
+
+    .submit-btn {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #f3cf55;
+      transform: translateY(-2px);
+    }
+
+    .map-box {
+      margin-top: 30px;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(212,175,55,0.2);
+    }
+
+    footer {
+      background: #000;
+      color: #d4af37;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #d4af37;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcome-banner">✨ Get in Touch With La'maison Reve — Your luxury experience starts here ✨</div>
+
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="enquiries.html">Enquiries</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have any Luxury Interest, please get in touch with us — your dreams come first.</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:Michealfotanguz@gmail.com">Michealfotanguz@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+27658759126">+27 65 875 9126</a></li>
+        <li><strong>Address:</strong> 5 Central Lane, Riverglen, Midrand, 2191 (Steyn City)</li>
+      </ul>
+
+      <!-- Embedded Google Form -->
+      <h3>Online Inquiry Form</h3>
+      <div class="form-embed-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfP5kPewv8jwI93icmFdPE03BdM2ZMmwbqUI_U7LBfpVyoVew/viewform?embedded=true" width="100%" height="961" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+
+      <!-- Contact Form -->
+      <h3>Send Us a Message</h3>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        
+        <!-- Redirect or Email Subject Customization -->
+        <input type="hidden" name="subject" value="New Inquiry - La'maison Reve">
+        <input type="hidden" name="from_name" value="La'maison Reve Contact Form">
+
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+27 00 000 0000">
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Service Interest</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="luxury-real-estate">Luxury Real Estate</option>
+            <option value="concierge-services">Concierge Services</option>
+            <option value="private-consultation">Private Consultation</option>
+            <option value="other">Other Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we assist you?" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div class="map-box">
+        <iframe 
+            src="

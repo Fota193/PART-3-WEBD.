@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La'maison Reve</title>
+  <style>
+    
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111; 
+      color: #f5f5f5; 
+    }
+
+    #welcome-banner {
+      background-color: #d4af37;
+      color: #000;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(135deg, #000, #222);
+      color: #d4af37; /* Gold accent */
+      text-align: center;
+      padding: 30px;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      letter-spacing: 2px;
+      font-family: 'Times New Roman', serif;
+    }
+
+    header img {
+      max-width: 150px;
+      margin-top: 15px;
+      border: 2px solid #d4af37;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: #000;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37;
+      text-shadow: 0 0 5px #d4af37;
+    }
+
+    /* Main content */
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+    }
+
+    main h2 {
+      text-align: center;
+      color: #d4af37;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    main ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    main ul li {
+      background: #222;
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 5px solid #d4af37;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    main ul li:hover {
+      transform: scale(1.02);
+      background: #333;
+    }
+
+    .highlighted {
+      box-shadow: 0 0 15px 3px #d4af37 !important; 
+      background-color: #3b3319 !important;
+    }
+
+    footer {
+      background: #000;
+      color: #d4af37;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #d4af37;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div id="welcome-banner">✨ Welcome to La'maison Reve — Where luxury meets your dreams. Click any statement below to highlight it! ✨</div>
+
+  <header>
+    <h1>La'maison Reve</h1>
+    <img src="_images/_Logo,.jpg" alt="La'maison Reve">
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="enquiries.html">Enquiries</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>Welcome to La'maison Reve where we make your dream of Luxury come to life with a touch of Gold.</p>
+      <ul>
+        <li>La'maison Reve was established with a touch of Luxury during the late 20's. To be precise, it was founded by Mr. F. Nguz in 2001 on the 13th of October.</li>
+        <li>La'maison Reve ensures that your dream is applied with a touch of Luxury, as it was one of the biggest sponsors of the 2010 FIFA World Cup.</li>
+        <li>Mr. F. Nguz's interviews worldwide, have proven that Luxury is all about your ideas and not Luxury itself.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">&copy; 2026 La'maison Reve. All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('welcome-banner');
+      if (banner) {
+        banner.style.display = 'block';
+      }
+
+      
+      const footerText = document.getElementById('footer-text');
+      const currentYear = new Date().getFullYear();
+      if (footerText) {
+        footerText.innerHTML = `&copy; ${currentYear} La'maison Reve. All Rights Reserved`;
+      }
+
+      const listItems = document.querySelectorAll('main ul li');
+      listItems.forEach(item => {
+        item.addEventListener('click', function() {
+          this.classList.toggle('highlighted');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

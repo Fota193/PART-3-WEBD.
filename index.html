@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La'maison Reve | Luxury Living & Real Estate</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #141414;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #welcome-banner {
+            background-color: var(--gold-primary);
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+        }
+
+        header {
+            background: linear-gradient(to bottom, #000000, var(--card-bg));
+            border-bottom: 1px solid var(--border-gold);
+            padding: 2rem 5%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold-primary);
+            margin: 1rem 0;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold-primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        section.highlighted-section {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            border-color: var(--gold-primary);
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.05rem;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--border-gold);
+            margin: 1.5rem 0;
+            max-height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.01);
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 1px solid var(--gold-primary);
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+        }
+
+        section ul {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        section ul li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+        }
+
+        .address-box {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-style: normal;
+            color: var(--gold-light);
+        }
+
+        footer {
+            background-color: #000;
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-banner">✨ Welcome to La'maison Reve &bull; Where Luxury Living Comes to Life ✨</div>
+
+    <header>
+        <h1>La'maison Reve</h1>
+        <img src="_images/_Logo,.jpg" alt="La'maison Reve">
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiries.html">Enquiries</a></li>
+                <li><a href="index.html">Index</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to La'maison Reve</h2>
+            <p>Your trusted luxury partner that brings your dreams to life with a touch of elegance and sophistication.</p>
+            <img src="_images/_Logo,.jpg" alt="La'maison Reve Logo Showcase" title="Click to highlight section">
+            <div>
+                <video width="320" height="240" controls>
+                    <source src="_images/_adv.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Services</h2>
+            <img src="_images/_image second.jpg" alt="Our services showcase" title="Click to highlight section">
+            <ul>
+                <li>Houses Sales</li>
+                <li>Maintenance and Repairs</li>
+                <li>Financing Options</li>
+                <li>Trade-In Services</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to schedule a service, please reach out to us through our contacts or email.</p>
+            <div class="address-box">
+                <p><strong>Visit Our Executive Office:</strong></p>
+                <p>The Village, 122 Babylonstoren Rd, Pretoria East, Pretoria, 0081</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>La'maison Reve &bull; Pretoria East, Gauteng</p>
+        <p id="footer-text">&copy; 2026 La'maison Reve. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const banner = document.getElementById('welcome-banner');
+            if (banner) {
+                banner.style.display = 'block';
+            }
+
+            const footerText = document.getElementById('footer-text');
+            const currentYear = new Date().getFullYear();
+            if (footerText) {
+                footerText.innerHTML = `&copy; ${currentYear} La'maison Reve. All Rights Reserved.`;
+            }
+
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(sec => {
+                const img = sec.querySelector('img');
+                if (img) {
+                    img.addEventListener('click', function() {
+                        
+                        sec.classList.toggle('highlighted-section');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

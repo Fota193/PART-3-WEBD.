@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La'maison Reve - Services</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #141414;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #welcome-banner {
+            background-color: var(--gold-primary);
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+        }
+
+        header {
+            background: linear-gradient(to bottom, #000000, var(--card-bg));
+            border-bottom: 1px solid var(--border-gold);
+            padding: 2rem 5%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold-primary);
+            margin: 1rem 0;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold-primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section > p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--border-gold);
+            margin: 1.5rem 0 2rem 0;
+            max-height: 450px;
+            object-fit: cover;
+        }
+
+        section ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 2rem auto 0 auto;
+            text-align: left;
+        }
+
+        section ul li {
+            position: relative;
+            padding: 1.2rem 1.2rem 1.2rem 2.5rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--gold-primary);
+            border-radius: 0 4px 4px 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section ul li:hover {
+            transform: translateX(5px);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .highlighted {
+            background: rgba(212, 175, 55, 0.15) !important;
+            border-left: 4px solid var(--gold-primary) !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        section ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 12px;
+            color: var(--gold-primary);
+            font-size: 0.9rem;
+        }
+
+        .map-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .map-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+        }
+
+        .map-box {
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #000;
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .address {
+            color: var(--gold-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-banner">✨ Explore Our Elite Services &bull; Click Any Service to Highlight ✨</div>
+
+    <header>
+        <h1>La'maison Reve</h1>
+        <img src="_images/_Logo,.jpg" alt="La'maison Reve logo">
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiries.html">Enquiries</a></li>
+                <li><a href="index.html">Index</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Services</h2>
+            <img src="_images/Servuices.jpg" alt="Our services showcase">
+            <p>At La'maison Reve, we offer top luxury services designed to astonish you and bring your dreams to life.</p>
+            <ul>
+                <li><strong>House Sales:</strong> Explore our wide range of selections of new and pre-owned luxury houses.</li>
+                <li><strong>Maintenance and Repairs:</strong> Keep your house pristine and updated with our elite maids, plumbers, gardeners, and more.</li>
+                <li><strong>Financing Options:</strong> La'maison Reve offers structured pricing options tailored to make luxury living accessible.</li>
+                <li><strong>Trade-In Services:</strong> Upgrade your lifestyle with La'maison Reve and our high-end services working entirely in your favor.</li>
+            </ul>
+
+            <div class="map-section">
+                <h3>Visit Our Location</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">5 Central Lane, Riverglen, Midrand, 2191 (Steyn City)</p>
+                <div class="map-box">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.327429676644!2d28.0165999!3d-25.9676889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9571f54c9a5573%3A0xc6ad50cc6f4cf9f2!2sSteyn%20City!5e0!3m2!1sen!2sza!4v1650000000000!5m2!1sen!2sza" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="address">Executive Office: The Village, 122 Babylonstoren Rd, Pretoria East, Pretoria, 0081</p>
+        <p id="footer-text">&copy; 2026 La'maison Reve. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const banner = document.getElementById('welcome-banner');
+            if (banner) {
+                banner.style.display = 'block';
+            }
+
+            const footerText = document.getElementById('footer-text');
+            const currentYear = new Date().getFullYear();
+            if (footerText) {
+                footerText.innerHTML = `&copy; ${currentYear} La'maison Reve. All Rights Reserved.`;
+            }
+
+            const serviceItems = document.querySelectorAll('main section ul li');
+            serviceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('highlighted');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

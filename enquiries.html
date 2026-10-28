@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La'maison Reve - Enquiries</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+
+    #welcome-banner {
+      background-color: #d4af37;
+      color: #000;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background: #000;
+      border-bottom: 2px solid #d4af37;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37;
+      text-shadow: 0 0 5px #d4af37;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+    }
+
+    main h2 {
+      text-align: center;
+      color: #d4af37;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    main p a {
+      color: #d4af37;
+      text-decoration: underline;
+    }
+
+    /* Google Form Callout Box */
+    .google-form-box {
+      background: #222;
+      border: 1px solid #d4af37;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(212,175,55,0.2);
+    }
+
+    .google-form-box p {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+    }
+
+    .google-btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .google-btn:hover {
+      background: #ffcc00;
+      transform: scale(1.03);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #d4af37;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #d4af37;
+      border-radius: 5px;
+      background: #222;
+      color: #f5f5f5;
+      font-size: 1em;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ffcc00;
+      box-shadow: 0 0 10px rgba(212,175,55,0.5);
+    }
+
+    button {
+      background: #d4af37;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    #success-message {
+      display: none;
+      background-color: #233b23;
+      border: 1px solid #4CAF50;
+      color: #a3e4d7;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    h3 {
+      text-align: center;
+      color: #d4af37;
+      margin-top: 40px;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border: 3px solid #d4af37;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(212,175,55,0.4);
+    }
+
+    footer {
+      background: #000;
+      color: #d4af37;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #d4af37;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcome-banner">✨ Submit Your Custom Enquiries — Let us bring your luxury dreams to life ✨</div>
+
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="enquiries.html">Enquiries</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Enquiries</h2>
+      <p>If you have any enquiry about La'maison Reve, please fill in the form below or complete our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfP5kPewv8jwI93icmFdPE03BdM2ZMmwbqUI_U7LBfpVyoVew/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Official Google Enquiry Form</a>. Your dreams come first.</p>
+      
+      <!-- Google Form Callout -->
+      <div class="google-form-box">
+        <p>✨ Prefer filling out our interactive Google Form directly? ✨</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfP5kPewv8jwI93icmFdPE03BdM2ZMmwbqUI_U7LBfpVyoVew/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="google-btn">
+          Open Google Enquiry Form
+        </a>
+      </div>
+
+      <div id="success-message">✨ Thank you! Your luxury enquiry has been securely submitted. We will contact you shortly. ✨</div>
+
+      <form id="enquiry-form" action="submit_enquiry.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Enquiry</button>
+      </form>
+
+      <h3>Response from Luxury Clients</h3>
+      <img src="_images/Fourth image.jpg" alt="Enquiries">
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">&copy; 2026 La'maison Reve. All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('welcome-banner');
+      if (banner) {
+        banner.style.display = 'block';
+      }
+
+      const footerText = document.getElementById('footer-text');
+      const currentYear = new Date().getFullYear();
+      if (footerText) {
+        footerText.innerHTML = `&copy; ${currentYear} La'maison Reve. All Rights Reserved`;
+      }
+
+      const form = document.getElementById('enquiry-form');
+      const successMessage = document.getElementById('success-message');
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const clientName = document.getElementById('name').value;
+          
+          successMessage.innerHTML = `✨ Thank you, ${clientName}! Your luxury enquiry has been received. We will reach out to you shortly. ✨`;
+          successMessage.style.display = 'block';
+
+          form.reset();
+
+          successMessage.scrollIntoView({ behavior: 'smooth' });
+
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
